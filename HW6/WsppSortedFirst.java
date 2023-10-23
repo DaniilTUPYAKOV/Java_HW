@@ -78,7 +78,11 @@ public class WsppSortedFirst {
     public static void main(String[] args) {
 
         if (args.length < 2) {
-            System.out.println("Not enough filenames. Expected: 'inputFilename outputFilename', have: '" + Arrays.toString(args) + "'");
+            System.out.println(
+                "Not enough filenames. Expected: 'inputFilename outputFilename', have: '" 
+                + Arrays.toString(args).replaceAll("\\[|]", "")
+                + "'"
+            );
             System.exit(0);
         }
 
