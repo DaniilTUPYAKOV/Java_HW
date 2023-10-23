@@ -135,6 +135,9 @@ public class Scanner {
                     }
                 }
             }
+            if (currentLastLinePosition == lastLine.length()-1) {
+                lastLine = null;
+            }
             if (tokenDetected) {
                 char[] token = new char[tokenBuilder.length()];
                 tokenBuilder.getChars(0, tokenBuilder.length(), token, 0);
@@ -333,6 +336,6 @@ public class Scanner {
         } 
         token = lastWordToken;
         lastWordToken = null;
-        return String.copyValueOf(token);
+        return String.valueOf(token);
     }
 }
