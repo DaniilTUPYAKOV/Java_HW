@@ -13,8 +13,8 @@ public class tester {
         // // System.out.println(fieldScanner.nextWord());
         // // System.out.println(fieldScanner.hasNext());
         // System.out.println(fieldScanner.nextInt(10));
-        // System.out.println(fieldScanner.nextInt(10));
-        String token = "0xffffc";
-        System.out.println(token.substring(2, token.length()));
+        System.out.println((char) 49);
+        // String token = "0xffffc";
+        // System.out.println(token.substring(2, token.length()));
     }
 }
