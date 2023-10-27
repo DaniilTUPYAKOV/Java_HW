@@ -23,6 +23,7 @@ public class Scanner {
     private boolean lastTokenWord = false;
     private String lastLine = null;
     private int currentLastLinePosition = 0;
+    private int newLines = 0;
 
     private enum tokenType {
         ALL,
@@ -113,8 +114,17 @@ public class Scanner {
     }
 
     // Scanner methods
-    public char[] readNext(tokenType tokenType) {
+    public boolean newLineBeforeNext() {
+        if (newLines > 0) {
+            newLines -= 1;
+            return true;
+        } else {
+            return false;
+        }
 
+    }
+
+    public char[] readNext(tokenType tokenType) {
         boolean needWord = true;
         boolean needInt = true;
 
@@ -136,6 +146,9 @@ public class Scanner {
                 } else {
                     int j = 0;
                     while (i + j < lastLine.length() && !isTokenPart(lastLine.charAt(i + j))) {
+                        if (isLineSeparator(lastLine.charAt(i + j))) {
+                            newLines += 1;
+                        }
                         j++;
                     }
                     if (!tokenBuilder.isEmpty()) {
@@ -170,6 +183,9 @@ public class Scanner {
                     } else {
                         int j = 0;
                         while (i + j < currentBufferReads && !isTokenPart(buffer[i + j])) {
+                            if (isLineSeparator(buffer[i + j])) {
+                                newLines += 1;
+                            }
                             j++;
                         }
                         if (!tokenBuilder.isEmpty()) {
@@ -284,7 +300,7 @@ public class Scanner {
         }
         if (!lastTokenInt) {
             lastToken = this.readNext(Scanner.tokenType.INT);
-            lastTokenWord = isInt(lastToken);
+            lastTokenInt = isInt(lastToken);
         } else {
             return true;
         }
