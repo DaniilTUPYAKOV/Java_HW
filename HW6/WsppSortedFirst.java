@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.TreeMap;
 import java.util.Map;
-import hw5.Scanner;
 
 public class WsppSortedFirst {
 
@@ -125,8 +124,10 @@ public class WsppSortedFirst {
                         wordInfo = new WordInfo();
                     }
                     if (!wordInLine.contains(word)) {
+                        wordInLine.add(word);
                         wordInfo.addMetaData(numberOfWords);
                     }
+                    words.put(word, wordInfo);
                 }
                 lineScanner.close();
             }
@@ -143,7 +144,7 @@ public class WsppSortedFirst {
                 for (Map.Entry<String, WordInfo> entry : words.entrySet()) {
                     out.write(entry.getKey());
                     out.write(" ");
-                    out.write(entry.getValue().getAppearance());
+                    out.write(Integer.toString(entry.getValue().getAppearance()));
                     out.write(" ");
                     out.write(entry.getValue().getMetaData().toString());
                     out.write("\n");
