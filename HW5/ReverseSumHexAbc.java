@@ -1,6 +1,5 @@
 
 import java.util.Arrays;
-import hw5.Scanner;
 
 public class ReverseSumHexAbc {
 
