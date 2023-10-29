@@ -1,6 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "src"
+        "src",
+        "src\\HW2",
+        "src\\HW3",
+        "src\\HW4",
+        "src\\HW5",
+        "src\\HW6"
     ],
     "java.project.outputPath": "bin",
     "java.dependency.packagePresentation": "hierarchical"
