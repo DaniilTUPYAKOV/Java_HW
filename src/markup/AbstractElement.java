@@ -13,7 +13,7 @@ public abstract class AbstractElement implements MarkdownElement {
     protected void toMarkdownAbstract(StringBuilder stringBuilder, String marker) {
         stringBuilder.append(marker);
         for (MarkdownElement i : inside) {
-            i.toMarkDown(stringBuilder);
+            i.toMarkdown(stringBuilder);
         }
         stringBuilder.append(marker);
     }

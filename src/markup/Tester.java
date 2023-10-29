@@ -20,7 +20,7 @@ public class Tester {
         ));
         
         StringBuilder testBuilder = new StringBuilder();
-        paragraph.toMarkDown(testBuilder);
+        paragraph.toMarkdown(testBuilder);
         System.out.println(testBuilder.toString());
         System.out.println(System.getProperty("java.class.path"));
     }   

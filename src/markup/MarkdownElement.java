@@ -2,5 +2,5 @@ package markup;
 
 public interface MarkdownElement {
 
-    void toMarkDown(StringBuilder stringBuilder);
+    void toMarkdown(StringBuilder stringBuilder);
 }

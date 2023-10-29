@@ -8,7 +8,7 @@ public class Emphasis extends AbstractElement {
         super(list);
     }
 
-    public void toMarkDown(StringBuilder stringBuilder) {
+    public void toMarkdown(StringBuilder stringBuilder) {
         super.toMarkdownAbstract(stringBuilder, "*");
     }
     

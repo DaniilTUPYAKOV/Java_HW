@@ -7,7 +7,7 @@ public class Text implements MarkdownElement {
         innerText = str;
     }
 
-    public void toMarkDown(StringBuilder stringBuilder) {
+    public void toMarkdown(StringBuilder stringBuilder) {
         stringBuilder.append(innerText);
     }
 }
