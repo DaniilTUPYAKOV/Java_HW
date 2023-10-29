@@ -1,11 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "HW2",
-        "HW3",
-        "HW5",
-        "HW6",
-        "HW4",
         "src"
     ],
-    "java.project.outputPath": "bin"
+    "java.project.outputPath": "bin",
+    "java.dependency.packagePresentation": "hierarchical"
 }

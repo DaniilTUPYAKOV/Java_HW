@@ -22,5 +22,6 @@ public class Tester {
         StringBuilder testBuilder = new StringBuilder();
         paragraph.toMarkDown(testBuilder);
         System.out.println(testBuilder.toString());
-    }    
+        System.out.println(System.getProperty("java.class.path"));
+    }   
 }
