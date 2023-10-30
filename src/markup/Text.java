@@ -10,4 +10,8 @@ public class Text implements MarkdownElement {
     public void toMarkdown(StringBuilder stringBuilder) {
         stringBuilder.append(innerText);
     }
+
+    public void toBBCode(StringBuilder stringBuilder) {
+        this.toMarkdown(stringBuilder);
+    }
 }

@@ -2,14 +2,9 @@ package markup;
 
 import java.util.List;
 
-public class Strikeout extends AbstractElement {
+public class Strikeout extends HighlightElement {
 
     public Strikeout(List<MarkdownElement> list) {
-        super(list);
+        super(list, "~", "[s]");
     }
-
-    public void toMarkdown(StringBuilder stringBuilder) {
-        super.toMarkdownAbstract(stringBuilder, "~");
-    }
-    
 }

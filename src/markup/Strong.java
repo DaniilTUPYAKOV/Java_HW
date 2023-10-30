@@ -2,14 +2,9 @@ package markup;
 
 import java.util.List;
 
-public class Strong extends AbstractElement {
+public class Strong extends HighlightElement {
 
     public Strong(List<MarkdownElement> list) {
-        super(list);
+        super(list, "__", "[b]");
     }
-
-    public void toMarkdown(StringBuilder stringBuilder) {
-        super.toMarkdownAbstract(stringBuilder, "__");
-    }
-    
 }

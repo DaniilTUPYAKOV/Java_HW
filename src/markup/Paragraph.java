@@ -11,5 +11,9 @@ public class Paragraph extends AbstractElement {
     public void toMarkdown(StringBuilder stringBuilder) {
         super.toMarkdownAbstract(stringBuilder, "");
     }
+
+    public void toBBCode(StringBuilder stringBuilder) {
+        this.toMarkdown(stringBuilder);
+    }
     
 }
