@@ -4,11 +4,10 @@ import java.util.List;
 
 public abstract class AbstractElement implements MarkdownElement {
 
-    private List<MarkdownElement> inside;
+    protected List<MarkdownElement> inside;
+    protected String text;
 
-    public AbstractElement(List<MarkdownElement> list) {
-        inside = list;
-    }
+    public AbstractElement() {}
 
     protected void mark(StringBuilder stringBuilder, String openMarker, String closeMarker, MarkType type) {
 

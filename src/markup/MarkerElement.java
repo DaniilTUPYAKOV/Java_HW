@@ -1,15 +1,13 @@
 package markup;
 
-import java.util.List;
-
-public abstract class HighlightElement extends AbstractElement{
+public abstract class MarkerElement extends AbstractElement{
 
     private String markDownMarker;
     private String bbCodeOpenMarker;
     private String bbCodeCloseMarker;
 
-    public HighlightElement(List<MarkdownElement> list, String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
-        super(list);
+    public MarkerElement(String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
+
         this.bbCodeOpenMarker = bbCodeOpenMarker;
         this.bbCodeCloseMarker = bbCodeCloseMarker;
         this.markDownMarker = markDownMarker;

@@ -1,16 +1,16 @@
 package markup;
 
-public class Text implements MarkdownElement {
-    private String innerText;
+public class Text extends ParagraphElement {
 
     public Text(String str) {
-        innerText = str;
+        super("", "", "");
+        text = str;
     }
-
+    @Override
     public void toMarkdown(StringBuilder stringBuilder) {
-        stringBuilder.append(innerText);
+        stringBuilder.append(text);
     }
-
+    @Override
     public void toBBCode(StringBuilder stringBuilder) {
         this.toMarkdown(stringBuilder);
     }
