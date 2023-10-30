@@ -3,7 +3,7 @@ package markup;
 public class Text extends ParagraphElement {
 
     public Text(String str) {
-        super("", "", "");
+        super(null, "", "", "");
         text = str;
     }
     @Override

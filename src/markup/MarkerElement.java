@@ -1,13 +1,16 @@
 package markup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class MarkerElement extends AbstractElement{
 
     private String markDownMarker;
     private String bbCodeOpenMarker;
     private String bbCodeCloseMarker;
 
-    protected MarkerElement(String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
-
+    protected MarkerElement(List<?extends AbstractElement> list, String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
+        super(list);
         this.bbCodeOpenMarker = bbCodeOpenMarker;
         this.bbCodeCloseMarker = bbCodeCloseMarker;
         this.markDownMarker = markDownMarker;
