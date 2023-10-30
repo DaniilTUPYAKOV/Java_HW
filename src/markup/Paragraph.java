@@ -9,11 +9,11 @@ public class Paragraph extends AbstractElement {
     }
 
     public void toMarkdown(StringBuilder stringBuilder) {
-        super.toMarkdownAbstract(stringBuilder, "");
+        super.mark(stringBuilder, "", "", MarkType.MARKDOWN);
     }
 
     public void toBBCode(StringBuilder stringBuilder) {
-        this.toMarkdown(stringBuilder);
+        super.mark(stringBuilder, "", "", MarkType.BBCODE);
     }
     
 }

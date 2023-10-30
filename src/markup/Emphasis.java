@@ -5,6 +5,6 @@ import java.util.List;
 public class Emphasis extends HighlightElement {
 
     public Emphasis(List<MarkdownElement> list) {
-        super(list, "*",  "[i]");
+        super(list, "*", "[i]", "[/i]");
     }
 }

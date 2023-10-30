@@ -5,21 +5,22 @@ import java.util.List;
 public abstract class HighlightElement extends AbstractElement{
 
     private String markDownMarker;
-    private String bbCodeMarker;
+    private String bbCodeOpenMarker;
+    private String bbCodeCloseMarker;
 
-    public HighlightElement(List<MarkdownElement> list, String markDownMarker, String bbCodeMarker) {
+    public HighlightElement(List<MarkdownElement> list, String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
         super(list);
-        this.bbCodeMarker = bbCodeMarker;
+        this.bbCodeOpenMarker = bbCodeOpenMarker;
+        this.bbCodeCloseMarker = bbCodeCloseMarker;
         this.markDownMarker = markDownMarker;
     }
 
     public void toMarkdown(StringBuilder stringBuilder) {
-        super.toMarkdownAbstract(stringBuilder, markDownMarker);
+        super.mark(stringBuilder, markDownMarker, markDownMarker, MarkType.MARKDOWN);
     }
 
     public void toBBCode(StringBuilder stringBuilder) {
-        super.toMarkdownAbstract(stringBuilder, bbCodeMarker);
+        super.mark(stringBuilder,bbCodeOpenMarker, bbCodeCloseMarker, MarkType.BBCODE);
     }
-    
     
 }

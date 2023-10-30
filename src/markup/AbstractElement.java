@@ -10,11 +10,19 @@ public abstract class AbstractElement implements MarkdownElement {
         inside = list;
     }
 
-    protected void toMarkdownAbstract(StringBuilder stringBuilder, String marker) {
-        stringBuilder.append(marker);
-        for (MarkdownElement i : inside) {
-            i.toMarkdown(stringBuilder);
+    protected void mark(StringBuilder stringBuilder, String openMarker, String closeMarker, MarkType type) {
+
+        stringBuilder.append(openMarker);
+        if (type.equals(MarkType.MARKDOWN)) {
+            for (MarkdownElement i : inside) {
+                i.toMarkdown(stringBuilder);
+            }
         }
-        stringBuilder.append(marker);
+        if (type.equals(MarkType.BBCODE)) {
+            for (MarkdownElement i : inside) {
+                i.toBBCode(stringBuilder);
+            }
+        }
+        stringBuilder.append(closeMarker);
     }
 }
