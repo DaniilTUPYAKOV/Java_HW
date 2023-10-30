@@ -7,9 +7,9 @@ public class ListItem extends MarkerElement {
 
     public ListItem(List<ParagraphAndList> list) {
         super("", "[*]", "");
-        List<MarkdownElement> listNew = new ArrayList<MarkdownElement>();
+        List<MarkableElement> listNew = new ArrayList<MarkableElement>();
         for (var i : list) {
-            listNew.add((MarkdownElement) i);
+            listNew.add((MarkableElement) i);
         }
         this.inside = listNew;
     }

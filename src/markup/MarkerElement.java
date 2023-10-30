@@ -6,7 +6,7 @@ public abstract class MarkerElement extends AbstractElement{
     private String bbCodeOpenMarker;
     private String bbCodeCloseMarker;
 
-    public MarkerElement(String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
+    protected MarkerElement(String markDownMarker, String bbCodeOpenMarker, String bbCodeCloseMarker) {
 
         this.bbCodeOpenMarker = bbCodeOpenMarker;
         this.bbCodeCloseMarker = bbCodeCloseMarker;

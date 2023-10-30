@@ -5,7 +5,7 @@ public abstract class ParagraphAndList extends AbstractElement {
     private String OpenMarker;
     private String CloseMarker;
 
-    public ParagraphAndList(String bbCodeOpenMarker, String bbCodeCloseMarker) {
+    protected ParagraphAndList(String bbCodeOpenMarker, String bbCodeCloseMarker) {
 
         this.OpenMarker = bbCodeOpenMarker;
         this.CloseMarker = bbCodeCloseMarker;

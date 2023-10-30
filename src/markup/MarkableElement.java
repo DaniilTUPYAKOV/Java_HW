@@ -1,6 +1,6 @@
 package markup;
 
-public interface MarkdownElement {
+public interface MarkableElement {
 
     void toMarkdown(StringBuilder stringBuilder);
     void toBBCode(StringBuilder stringBuilder);
