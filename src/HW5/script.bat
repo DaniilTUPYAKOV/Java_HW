@@ -1,3 +1,4 @@
+del *.class
 javac WordStatInput.java
 javac Reverse.java
 javac ReverseSumHexAbc.java

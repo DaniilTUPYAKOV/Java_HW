@@ -1,0 +1,1 @@
+java WsppSortedFirst.java input.txt output.txt

@@ -92,6 +92,10 @@ public class Scanner {
         return true;
     }
 
+    private static boolean isTokenPart(char c) {
+        return isWordPart(c) || isIntPart(c);
+    }
+
     private boolean isLineSeparator(char c) {
         if (lineSeparator.length == 1) {
             return c == lineSeparator[0];
@@ -140,7 +144,7 @@ public class Scanner {
                     tokenBuilder.append(lastLine.charAt(i));
 
                 } else {
-                    if (isLineSeparator(lastLine.charAt(i)) && tokenBuilder.isEmpty()) {
+                    if (isLineSeparator(lastLine.charAt(i))) {
                         newLines += 1;
                     }
                     if (!tokenBuilder.isEmpty()) {

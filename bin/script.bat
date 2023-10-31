@@ -1,3 +1,6 @@
-javac Wspp.java
-javac WsppSortedFirst.java
-java -ea -jar WsppTest.jar SortedFirst
+del *.class
+javac WordStatInput.java
+javac Reverse.java
+javac ReverseSumHexAbc.java
+java -ea -jar WordStatTest.jar Base
+java -ea -jar FastReverseTest.jar SumHexAbc

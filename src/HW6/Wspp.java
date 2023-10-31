@@ -109,22 +109,18 @@ public class Wspp {
         try {
             int numberOfWords = 0;
             Scanner scanner = new Scanner(new FileInputStream(args[0]), "UTF-8");
-            while (scanner.hasNextLine()) { 
-                Scanner lineScanner = new Scanner(scanner.nextLine()); // сканер по строке 
-                while (lineScanner.hasNextWord()) {
-                    String word = lineScanner.nextWord().toLowerCase();
-                    // добавляем слово в мапу
-                    numberOfWords += 1;
-                    WordInfo wordInfo = words.get(word);
-                    if (wordInfo != null) {
-                        wordInfo.addAppearance();
-                    } else {
-                        wordInfo = new WordInfo();
-                    }
-                    wordInfo.addMetaData(numberOfWords);
-                    words.put(word, wordInfo);
+            while (scanner.hasNextWord()) { 
+                String word = scanner.nextWord().toLowerCase();
+                // добавляем слово в мапу
+                numberOfWords += 1;
+                WordInfo wordInfo = words.get(word);
+                if (wordInfo != null) {
+                    wordInfo.addAppearance();
+                } else {
+                    wordInfo = new WordInfo();
                 }
-                lineScanner.close();
+                wordInfo.addMetaData(numberOfWords);
+                words.put(word, wordInfo);
             }
             scanner.close();
         } catch (IOException e) {
