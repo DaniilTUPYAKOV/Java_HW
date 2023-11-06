@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 
 public class Md2Html {
     public static void main(String[] args) {
-        // args = new String[] { "in.txt", "out.txt" };
+        // args = new String[] { "src/md2html/in.txt", "src/md2html/out.txt" };
         StringBuilder result = new StringBuilder();
         try {
             Parser parser = new Parser(args[0], result);

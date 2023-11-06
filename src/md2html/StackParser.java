@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
-public class Parser {
+public class StackParser {
     private StringBuilder parsedText;
     private BufferedReader reader;
 
@@ -30,7 +30,7 @@ public class Parser {
     private final Map<Character, String> specialSymbols = Map.of(
             '<', "&lt;", '>', "&gt;", '&', "&amp;");
 
-    public Parser(String in, StringBuilder out) throws IOException {
+    public StackParser(String in, StringBuilder out) throws IOException {
         reader = new BufferedReader(new InputStreamReader(new FileInputStream(in), StandardCharsets.UTF_8));
         parsedText = out;
     }
@@ -56,6 +56,10 @@ public class Parser {
             return index;
         }
 
+        public boolean isSameMarker(String markerToCheck) {
+            return (marker.equals(markerToCheck));
+        }
+
         public int markerLength() {
             return marker.length();
         }
@@ -68,7 +72,7 @@ public class Parser {
     private List<Marker> findMarkerPairs(StringBuilder stringBuilder) {
 
         List<Marker> readyMarkers = new ArrayList<>();
-        Map<String, Marker> openedMarkers = new HashMap<>();
+        Stack<Marker> openedMarkers = new Stack<>();
 
         int markerEnd;
         for (int i = 0; i < stringBuilder.length(); i++) {
@@ -83,12 +87,12 @@ public class Parser {
                     markerEnd++;
                 }
                 String marker = stringBuilder.substring(i, markerEnd + 1);
-                if (!openedMarkers.isEmpty() && openedMarkers.keySet().contains(marker)) {
-                    Marker readyForPair = openedMarkers.remove(marker);
+                if (!openedMarkers.empty() && openedMarkers.peek().isSameMarker(marker)) {
+                    Marker readyForPair = openedMarkers.pop();
                     readyMarkers.add(readyForPair);
                     readyMarkers.add(new Marker(markers.get(marker), marker, i, true));
                 } else {
-                    openedMarkers.put(marker, new Marker(markers.get(marker), marker, i, false));
+                    openedMarkers.add(new Marker(markers.get(marker), marker, i, false));
                 }
                 i = markerEnd;
             }
