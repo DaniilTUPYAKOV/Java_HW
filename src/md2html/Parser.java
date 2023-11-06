@@ -15,6 +15,8 @@ import java.util.Set;
 public class Parser {
     private StringBuilder parsedText;
     private BufferedReader reader;
+    private Character hider = '\\';
+    private Character headerMarker = '#';
 
     private final Set<Character> markerChars = Set.of(
             '*', '_', '`', '-');
@@ -73,7 +75,7 @@ public class Parser {
         int markerEnd;
         for (int i = 0; i < stringBuilder.length(); i++) {
             if (markerChars.contains(stringBuilder.charAt(i))) {
-                if (i - 1 >-1 && stringBuilder.charAt(i - 1) == '\\') {
+                if (i - 1 >-1 && stringBuilder.charAt(i - 1) == hider) {
                     stringBuilder.deleteCharAt(i-1);
                     i--;
                     continue;
@@ -137,13 +139,13 @@ public class Parser {
 
             if ((finish || line.length() == 0) && !blokBuilder.isEmpty()) {
                 int i = 0;
-                while (blokBuilder.charAt(i) == '#') {
+                while (blokBuilder.charAt(i) == headerMarker) {
                     i++;
                 }
-                if (i != 0 && blokBuilder.charAt(i) == ' ') { /* Header detected */
+                if (i != 0 && blokBuilder.charAt(i) == ' ') {   /* Header detected */
                     blokBuilder.delete(0, i + 1);
                     parseBlok(blokBuilder, TagType.HEADER, i);
-                } else { /* Paragraph detected */
+                } else {                                        /* Paragraph detected */
                     parseBlok(blokBuilder, TagType.PARAGRAPH, 0);
                 }
                 blokBuilder.setLength(0);
