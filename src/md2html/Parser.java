@@ -1,4 +1,4 @@
-// package md2html;
+package md2html;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -38,50 +38,48 @@ public class Parser {
             this.closer = closer;
         }
 
-        public int getIndex(){
+        public int getIndex() {
             return index;
         }
 
-        public boolean isSameMarker(String markerToCheck){
+        public boolean isSameMarker(String markerToCheck) {
             return (marker.equals(markerToCheck));
         }
 
-        public int markerLength(){
+        public int markerLength() {
             return marker.length();
         }
 
-        public void addTag(StringBuilder stringBuilder){
+        public void addTag(StringBuilder stringBuilder) {
             Service.addTag(stringBuilder, type, closer, 0);
         }
     }
 
-    private List<Marker> findMarkerPairs(StringBuilder stringBuilder){
+    private List<Marker> findMarkerPairs(StringBuilder stringBuilder) {
         final Set<Character> markerChars = Set.of(
-            '*', '_', '`', '-'
-        );
+                '*', '_', '`', '-');
 
         final Map<String, TagType> markers = Map.of(
-            "*", TagType.EMPHASISE,
-            "_", TagType.EMPHASISE,
-            "**", TagType.STRONG,
-            "__", TagType.STRONG,
-            "--", TagType.STRIKEOUT,
-            "`", TagType.CODE);
-        
+                "*", TagType.EMPHASISE,
+                "_", TagType.EMPHASISE,
+                "**", TagType.STRONG,
+                "__", TagType.STRONG,
+                "--", TagType.STRIKEOUT,
+                "`", TagType.CODE);
+
         final Map<Character, String> specialSymbols = Map.of(
-            '<', "&lt;", '>', "&gt;", '\\', "", '&', "&amp;"
-        );
+                '<', "&lt;", '>', "&gt;", '\\', "", '&', "&amp;");
 
         List<Marker> readyMarkers = new ArrayList<>();
         Stack<Marker> openedMarkers = new Stack<>();
         int markerEnd;
-        for (int i = 0; i < stringBuilder.length(); i++){
-            if (markerChars.contains(stringBuilder.charAt(i)) && (i-1 < 0 || stringBuilder.charAt(i-1) != '\\')) {
+        for (int i = 0; i < stringBuilder.length(); i++) {
+            if (markerChars.contains(stringBuilder.charAt(i)) && (i - 1 < 0 || stringBuilder.charAt(i - 1) != '\\')) {
                 markerEnd = i;
-                if (i+1 < stringBuilder.length() && markerChars.contains(stringBuilder.charAt(i+1))) {
+                if (i + 1 < stringBuilder.length() && markerChars.contains(stringBuilder.charAt(i + 1))) {
                     markerEnd++;
                 }
-                String marker = stringBuilder.substring(i,markerEnd+1);
+                String marker = stringBuilder.substring(i, markerEnd + 1);
                 if (!openedMarkers.empty() && openedMarkers.peek().isSameMarker(marker)) {
                     Marker readyForPair = openedMarkers.pop();
                     readyMarkers.add(readyForPair);
@@ -106,15 +104,17 @@ public class Parser {
         return readyMarkers;
     }
 
-    private void parseParagraph(StringBuilder stringBuilder) {
+    private void parseBlok(StringBuilder stringBuilder, TagType type, int headerOrder) {
+        Service.addTag(parsedText, type, false, headerOrder);
         List<Marker> markers = findMarkerPairs(stringBuilder);
         int start = 0;
-        for (Marker marker : markers){
+        for (Marker marker : markers) {
             parsedText.append(stringBuilder.subSequence(start, marker.getIndex()));
             marker.addTag(parsedText);
             start = marker.getIndex() + marker.markerLength();
         }
         parsedText.append(stringBuilder.subSequence(start, stringBuilder.length()));
+        Service.addTag(parsedText, type, true, headerOrder);
     }
 
     public void Parse() throws IOException {
@@ -139,13 +139,9 @@ public class Parser {
                 }
                 if (i != 0 && blokBuilder.charAt(i) == ' ') { /* Header detected */
                     blokBuilder.delete(0, i + 1);
-                    Service.addTag(parsedText, TagType.HEADER, false, i);
-                    parsedText.append(blokBuilder);
-                    Service.addTag(parsedText, TagType.HEADER, true, i);
+                    parseBlok(blokBuilder, TagType.HEADER, i);
                 } else { /* Paragraph detected */
-                    Service.addTag(parsedText, TagType.PARAGRAPH, false, 0);
-                    parseParagraph(blokBuilder);
-                    Service.addTag(parsedText, TagType.PARAGRAPH, true, 0);
+                    parseBlok(blokBuilder, TagType.PARAGRAPH, 0);
                 }
                 blokBuilder.setLength(0);
                 parsedText.append(System.lineSeparator());
