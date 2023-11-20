@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="039af4d9-9503-4a90-aefa-34fd8b523c9c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/progintro.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/Sum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/Sum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/SumLongSpace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/SumLongSpace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/SumTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW2/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/Reverse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/Reverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/ReverseSumHex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/ReverseSumHex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/ReverseTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW3/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatCountMiddleL$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatCountMiddleL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatCountMiddleL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/WordStatTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW4/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/FastReverseTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/Reverse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/Reverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/ReverseSumHexAbc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/ReverseSumHexAbc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/ReverseTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/Scanner$tokenType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/Scanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/Scanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/WordStatInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/WordStatInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/WordStatTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW5/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/Scanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/Wspp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/WsppSortedFirst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/WsppTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW6/testScript.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Md2HtmlTest.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Asserts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Asserts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/BaseChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/BaseChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Either$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Either$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Either.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Either.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/ExtendedRandom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/ExtendedRandom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Functional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/MainChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Named.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Selector$Composite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Selector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Selector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/TestCounter$RunnableE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/TestCounter$SupplierE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/TestCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/TestCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Tester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/Unit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../base/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/AbstractElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/AbstractHighlighter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/AbstractList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Emphasis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/ListItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkableElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkerElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkupListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkupTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/MarkupTester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/OrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Paragraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/ParagraphAndList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/ParagraphElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Strikeout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Strong.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/UnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markup/script.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Md2Html.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Md2Html.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Parser$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Parser$Marker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/StackParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/TagType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/TagType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/ideal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/in.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/out.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/s.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/AbstractElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/AbstractHighlighter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/AbstractList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/ListItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/MarkableElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/MarkerElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/OrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/Paragraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/ParagraphAndList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/ParagraphElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../md2html/unused/UnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2YQZ951SK0XcXlU7zpBlJOnMnlF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="039af4d9-9503-4a90-aefa-34fd8b523c9c" name="Changes" comment="" />
+      <created>1700459612658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700459612658</updated>
+    </task>
+    <servers />
+  </component>
+</project>

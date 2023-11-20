@@ -1,8 +1,4 @@
 package game;
-
-/**
- * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
- */
 public final class Move {
     private final int row;
     private final int column;
@@ -28,6 +24,6 @@ public final class Move {
 
     @Override
     public String toString() {
-        return "row=" + row + ", column=" + column + ", value=" + value;
+        return "row=" + (row+1) + ", column=" + (column+1) + ", value=" + value;
     }
 }

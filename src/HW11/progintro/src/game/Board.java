@@ -1,10 +1,9 @@
 package game;
 
-/**
- * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
- */
 public interface Board {
     Position getPosition();
     Cell getCell();
-    Result makeMove(Move move);
+    Result makeMove(Move move) throws Exception;
+    boolean isAvailible();
+    Exception getExeption();
 }

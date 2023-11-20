@@ -15,18 +15,57 @@ public class MNKBoard implements Board, Position {
     private final int m, n, k;
     private int empty;
     private final Position controller;
+    private Exception error = null;
+    private final boolean availible;
 
-    public MNKBoard(int m, int n, int k) {
+    public MNKBoard(int m, int n, int k){
+        this.availible = checkCorrectness(m, n, k);
         this.m = m;
         this.n = n;
         this.k = k;
-        this.empty = m * n;
-        this.cells = new Cell[m][n];
-        for (Cell[] row : cells) {
-            Arrays.fill(row, Cell.E);
+        this.empty = availible ? m * n : 0;
+        this.cells = availible ? new Cell[m][n] : null;
+        if (availible){
+            for (Cell[] row : cells) {
+                Arrays.fill(row, Cell.E);
+            }
         }
         turn = Cell.X;
-        this.controller = new BoardController(this);
+        this.controller = availible ? new BoardController(this) : null;
+        this.error = availible ? null : new IllegalArgumentException("Impossible to play with rules: m = "
+                + m + ", n = " + n + ", k = " + k +
+                ". Numbers m, n, k must be positive integer, and k <= max(n,m)");
+    }
+
+    private boolean checkCorrectness(int m, int n, int k){
+        if (k < 1 || m < 1 || n < 1) {
+            return false;
+        }
+        if (m < n){
+            return k <= n;
+        }
+        return k <= m;
+    }
+    private boolean isInBoard(int row, int col){
+        return (row < m && col < n) && (row > -1 && col > -1);
+    }
+    private boolean checkWin(int curRow, int curCol, int deltaRow, int deltaCol){
+        int counter = this.k - 1;
+        int i = curRow + deltaRow;
+        int j = curCol + deltaCol;
+        while (isInBoard(i, j) && cells[i][j] == turn && counter > 0){
+            counter--;
+            i+=deltaRow;
+            j+=deltaCol;
+        }
+        i = curRow - deltaRow;
+        j = curCol - deltaCol;
+        while (isInBoard(i, j) && cells[i][j] == turn && counter > 0){
+            counter--;
+            i-=deltaRow;
+            j-=deltaCol;
+        }
+        return counter == 0;
     }
 
     @Override
@@ -40,38 +79,22 @@ public class MNKBoard implements Board, Position {
     }
 
     @Override
-    public Result makeMove(final Move move) {
+    public Result makeMove(final Move move) throws Exception {
+        if (!availible){
+            throw error;
+        }
         if (!isValid(move)) {
             return Result.LOSE;
         }
-
-        cells[move.getRow()][move.getColumn()] = move.getValue();
+        final int moveRow = move.getRow();
+        final int moveColumn = move.getColumn();
+        cells[moveRow][moveColumn] = move.getValue();
         empty--;
 
-        int inDiag1 = 0;
-        int inDiag2 = 0;
-        for (int u = 0; u < 3; u++) {
-            int inRow = 0;
-            int inColumn = 0;
-            for (int v = 0; v < 3; v++) {
-                if (cells[u][v] == turn) {
-                    inRow++;
-                }
-                if (cells[v][u] == turn) {
-                    inColumn++;
-                }
-            }
-            if (inRow == 3 || inColumn == 3) {
-                return Result.WIN;
-            }
-            if (cells[u][u] == turn) {
-                inDiag1++;
-            }
-            if (cells[u][2 - u] == turn) {
-                inDiag2++;
-            }
-        }
-        if (inDiag1 == 3 || inDiag2 == 3) {
+        if (checkWin(moveRow, moveColumn, 1, 0) ||
+                checkWin(moveRow, moveColumn, 1, 1) ||
+                checkWin(moveRow, moveColumn, 0, 1) ||
+                checkWin(moveRow, moveColumn, -1, 1)){
             return Result.WIN;
         }
         if (empty == 0) {
@@ -98,13 +121,21 @@ public class MNKBoard implements Board, Position {
     public String toString() {
         final StringBuilder sb = new StringBuilder(" ");
         for (int r = 0; r < n; r++) {sb.append(r+1);}
-        for (int r = 0; r < 3; r++) {
+        for (int r = 0; r < m; r++) {
             sb.append("\n");
-            sb.append(r);
-            for (int c = 0; c < 3; c++) {
+            sb.append(r+1);
+            for (int c = 0; c < n; c++) {
                 sb.append(SYMBOLS.get(cells[r][c]));
             }
         }
         return sb.toString();
+    }
+    @Override
+    public boolean isAvailible() {
+        return availible;
+    }
+    @Override
+    public Exception getExeption() {
+        return error;
     }
 }

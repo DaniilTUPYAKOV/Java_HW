@@ -105,4 +105,12 @@ public class TicTacToeBoard implements Board, Position {
         }
         return sb.toString();
     }
+    @Override
+    public boolean isAvailible() {
+        return true;
+    }
+    @Override
+    public Exception getExeption() {
+        return null;
+    }
 }

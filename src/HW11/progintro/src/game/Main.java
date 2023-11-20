@@ -1,14 +1,11 @@
 package game;
 
-/**
- * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
- */
 public class Main {
     public static void main(String[] args) {
-        final Game game = new Game(false, new HumanPlayer(), new HumanPlayer());
+        final Game game = new Game(false, true, new HumanPlayer(), new RandomPlayer());
         int result;
         do {
-            result = game.play(new MNKBoard(3,3,3));
+            result = game.play(new MNKBoard(4,4,5));
             System.out.println("Game result: " + result);
         } while (result != 0);
     }
